@@ -26,9 +26,10 @@ import junit.framework.Assert;
 public class SignUpForm_Page_Test extends Base_Test {
 
 	@BeforeClass
-	public static void setup() {
+	public static void setup() throws InterruptedException {
 		setupBrowser();
 		getDriver().navigate().to(SignUpForm_Page.URL);
+		Thread.sleep(3000);//Adding delay as Loans page is taking lot of time to load completely in browser, because of favicon not delivered by server.
 	}
 	
 	@Test
